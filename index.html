@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diferença entre Dois Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input[type="number"] {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Diferença entre Dois Números</h2>
+        <label for="numero1">Qual o primeiro número:</label><br>
+        <input type="number" id="numero1" required><br>
+        <label for="numero2">Qual o segundo número:</label><br>
+        <input type="number" id="numero2" required><br>
+        <button onclick="calcularDiferenca()">Calcular Diferença</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calcularDiferenca() {
+            const x = document.getElementById('numero1').value;
+            const y = document.getElementById('numero2').value;
+            const x_num = parseInt(x);
+            const y_num = parseInt(y);
+            const resp = Math.abs(x_num - y_num);
+            document.getElementById('result').innerText = `A diferença entre ${x_num} e ${y_num} é: ${resp}`;
+        }
+    </script>
+</body>
+</html>
