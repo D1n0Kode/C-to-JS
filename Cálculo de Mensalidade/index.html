@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Mensalidade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #inputs {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="inputs">
+        <label for="matricula">Qual a Matrícula:</label><br>
+        <input type="text" id="matricula"><br>
+        
+        <label for="mensalidade">Qual o valor da mensalidade:</label><br>
+        <input type="text" id="mensalidade"><br>
+        
+        <button onclick="calcularMensalidade()">Calcular</button>
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+        function calcularMensalidade() {
+            const matricula = document.getElementById('matricula').value;
+            const mensalidade = document.getElementById('mensalidade').value;
+
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = `O aluno ${matricula} paga mensalmente R$ ${parseFloat(mensalidade).toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
