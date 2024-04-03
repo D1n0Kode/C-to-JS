@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competidor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .input-field {
+            margin-bottom: 15px;
+            padding: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-label">Qual o código:</div>
+        <input type="number" id="code" class="input-field">
+        <div class="input-label">Qual o idade:</div>
+        <input type="number" id="age" class="input-field">
+        <div class="input-label">Qual o altura (em metros):</div>
+        <input type="number" id="height" step="0.01" class="input-field">
+        <div class="input-label">Qual o peso (em quilos):</div>
+        <input type="number" id="weight" step="0.01" class="input-field">
+        <button onclick="calcular()" class="btn">Calcular</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calcular() {
+            let code = parseInt(document.getElementById('code').value);
+            let age = parseInt(document.getElementById('age').value);
+            let height = parseFloat(document.getElementById('height').value);
+            let weight = parseFloat(document.getElementById('weight').value);
+
+            let result = document.getElementById('result');
+            result.innerHTML = `O competidor ${code}, tem ${age} anos, tem ${height.toFixed(2)}m de altura e pesa ${weight.toFixed(2)} Kg.`;
+        }
+    </script>
+</body>
+</html>
